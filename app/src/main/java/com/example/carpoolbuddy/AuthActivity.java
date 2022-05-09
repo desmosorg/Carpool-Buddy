@@ -16,7 +16,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.UUID;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -64,9 +67,26 @@ public class AuthActivity extends AppCompatActivity {
                         }
                     }
                 });
-        User myself = new User("1234","nathan", "nathaniel_powell@fis.edu", "student", 0.5);
+        User myself = new User(UUID.randomUUID().toString(),"nathan", "nathaniel_powell@fis.edu", "student", 0.5);
 
-        firestore.collection("CarpoolBuddy").document("Information").collection("Users").document(myself.getUid()).set(myself);
+//        firestore.collection("CarpoolBuddy").document("Information").collection("Users").document(myself.getUid()).set(myself);
+        firestore.collection("CarpoolBuddy/Information/Users").document(myself.getUid()).set(myself);
+
+        firestore.collection("CarpoolBuddy/Information/Users").document(myself.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful())
+                {
+                    DocumentSnapshot ds = task.getResult();
+
+                    User myUser = ds.toObject(User.class);
+                    Student myStudent = ds.toObject(Student.class);
+
+                    Log.d("Test", myUser.getEmail());
+                    Log.d("Test", myStudent.getUserType());
+                }
+            }
+        });
 
     }
 
@@ -111,4 +131,10 @@ public class AuthActivity extends AppCompatActivity {
         }
 
     }
-}
+
+
+    public void goToSignUp(View v)
+    {
+        Intent intent = new Intent(this, signingIn.class);
+        startActivity(intent);
+    }}

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarpoolBuddy">
         <activity
+            android:name=".CreateVehicleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".addVehicles"
+            android:exported="false" />
+        <activity
             android:name=".signingIn"
             android:exported="false" />
         <activity
