@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nathan P/StudioProjects/Carpool-Buddy/app/src/main/res/layout/activity_add_vehicles.xml" value="0.25" />
+        <entry key="..\:/Users/Nathan P/StudioProjects/Carpool-Buddy/app/src/main/res/layout/activity_auth.xml" value="0.25" />
+        <entry key="..\:/Users/Nathan P/StudioProjects/Carpool-Buddy/app/src/main/res/layout/activity_create_vehicle.xml" value="0.25" />
+        <entry key="..\:/Users/Nathan P/StudioProjects/Carpool-Buddy/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Nathan P/StudioProjects/Carpool-Buddy/app/src/main/res/layout/activity_signing_in.xml" value="0.25" />
+        <entry key="..\:/Users/Nathan P/StudioProjects/Carpool-Buddy/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
+        <entry key="..\:/Users/Nathan P/StudioProjects/Carpool-Buddy/app/src/main/res/layout/activity_vehicles_info.xml" value="0.25" />
+        <entry key="..\:/Users/Nathan P/StudioProjects/Carpool-Buddy/app/src/main/res/layout/vehicles_info_row_view.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_vehicles.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.24592391304347827" />
         <entry key="app/src/main/res/layout/activity_create_vehicle.xml" value="0.18645833333333334" />
