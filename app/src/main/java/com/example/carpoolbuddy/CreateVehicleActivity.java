@@ -13,12 +13,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
-import com.example.carpoolbuddy.Models.Car;
-import com.example.carpoolbuddy.Models.ElectricCar;
-import com.example.carpoolbuddy.Models.Motorbike;
-import com.example.carpoolbuddy.Models.Vehicle;
+import com.example.carpoolbuddy.Car;
+import com.example.carpoolbuddy.Motorcycle;
+import com.example.carpoolbuddy.Vehicle;
 import com.example.carpoolbuddy.R;
-import com.example.carpoolbuddy.Utils.Constants;
+import com.example.carpoolbuddy.Constants;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -54,7 +53,7 @@ public class CreateVehicleActivity extends AppCompatActivity {
     }
 
     private void setupSpinner() {
-        String[] vehicleTypes = {Constants.CAR, Constants.ELECTRIC_CAR, Constants.MOTOR_BIKE};
+        String[] vehicleTypes = {Constants.CAR, Constants.ELECTRIC_CAR, Constants.MOTORCYCLE};
         // add user types to spinner
         ArrayAdapter<String> langArrAdapter = new ArrayAdapter<String>(CreateVehicleActivity.this,
                 android.R.layout.simple_spinner_item, vehicleTypes);
@@ -77,7 +76,7 @@ public class CreateVehicleActivity extends AppCompatActivity {
 
     public void addFields() {
         commonFields();
-        if(!selectedType.equals(Constants.MOTOR_BIKE)) {
+        if(!selectedType.equals(Constants.MOTORCYCLE)) {
             capacityField = new EditText(this);
             capacityField.setHint(Constants.CAPACITY_HINT);
             layout.addView(capacityField);
@@ -113,14 +112,16 @@ public class CreateVehicleActivity extends AppCompatActivity {
         //check which type of vehicle was created
         if(selectedType.equals(Constants.CAR)) {
             int capacityInt = Integer.parseInt(capacityField.getText().toString());
-            newVehicle = new Car(ownerString, modelString, capacityInt, vehicleId, basePriceDouble);
+            ArrayList<String> ridersUIDs = new ArrayList<String>();
+            newVehicle = new Car(ownerString, modelString, capacityInt, vehicleId, ridersUIDs, basePriceDouble);
         }
-        else if(selectedType.equals(Constants.ELECTRIC_CAR)) {
-            int capacityInt = Integer.parseInt(capacityField.getText().toString());
-            newVehicle = new ElectricCar(ownerString, modelString, capacityInt, vehicleId, basePriceDouble);
-        }
-        else if(selectedType.equals(Constants.MOTOR_BIKE)) {
-            newVehicle = new Motorbike(ownerString, modelString, 2, vehicleId, basePriceDouble);
+//        else if(selectedType.equals(Constants.ELECTRIC_CAR)) {
+//            int capacityInt = Integer.parseInt(capacityField.getText().toString());
+//            newVehicle = new ElectricCar(ownerString, modelString, capacityInt, vehicleId, basePriceDouble);
+//        }
+        else if(selectedType.equals(Constants.MOTORCYCLE)) {
+            ArrayList<String> ridersUIDs = new ArrayList<String>();
+            newVehicle = new Motorcycle(ownerString, modelString, 2, vehicleId, ridersUIDs, basePriceDouble);
         }
 
         //add the new vehicle to the database

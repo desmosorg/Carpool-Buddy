@@ -7,6 +7,7 @@
     tools:context=".CreateVehicleActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayoutCreateVehicle"
         android:layout_width="408dp"
         android:layout_height="377dp"
         android:orientation="vertical"
@@ -14,7 +15,7 @@
         tools:layout_editor_absoluteY="1dp"></LinearLayout>
 
     <Spinner
-        android:id="@+id/vehicleTypeSpinner"
+        android:id="@+id/selectVechicleTypeSpinner"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="1dp"

@@ -14,6 +14,12 @@ public class Motorcycle extends Vehicle
         this.motorcycleType = motorcycleType;
     }
 
+    public Motorcycle(String owner, String model, int capacity, String vehicleID, ArrayList<String> ridersUIDs, double basePrice) {
+        super(owner, model, capacity, vehicleID, ridersUIDs, true, Constants.MOTORCYCLE, basePrice);
+        this.range = range;
+        this.motorcycleType = Constants.MOTORCYCLE_TYPE;
+    }
+
     public Motorcycle(double range, String motorcycleType) {
         this.range = range;
         this.motorcycleType = motorcycleType;

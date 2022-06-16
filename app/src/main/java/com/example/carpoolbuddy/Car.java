@@ -11,6 +11,11 @@ public class Car extends Vehicle
         this.range = range;
     }
 
+    public Car(String owner, String model, int capacity, String vehicleID, ArrayList<String> ridersUIDs, double basePrice) {
+        super(owner, model, capacity, vehicleID, ridersUIDs, true, Constants.CAR, basePrice);
+        this.range = range;
+    }
+
     public Car(double range) {
         this.range = range;
     }
