@@ -19,4 +19,9 @@ public class UserProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
     }
+
+    public void createVehicle(View v){
+        Intent nextScreen = new Intent(getBaseContext(), CreateVehicleActivity.class);
+        startActivity(nextScreen);
+    }
 }

@@ -126,7 +126,7 @@ public class AuthActivity extends AppCompatActivity {
     {
         if(currentUser != null)
         {
-            Intent intent = new Intent(this, UserProfileActivity.class);
+            Intent intent = new Intent(this, VehiclesInfoActivity.class);
             startActivity(intent);
         }
 
